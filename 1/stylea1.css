@@ -1,0 +1,85 @@
+body {
+	color: purple;
+	background-color: #e5cd47;
+	padding-top: 10px;
+}
+
+#sidebar {
+	padding-left: 10px;
+	width: 20%;
+	float: left;
+}
+
+#mainpage {
+	position: relative;
+	width: 75%;
+	float: right;
+}
+
+#number {
+	display: inline-block;
+	margin: 0px 5px;
+}
+
+input {
+	width: 200px;
+}
+
+#answer {
+	margin-left: 5px;
+	display: inline-block;
+}
+
+#rangediv {
+	display: inline-block;
+	margin: 0px 10px;
+}
+
+table {
+	margin: 75px 0px;
+}
+
+th {
+	text-align: center;	
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+#dottedline {
+	border-top: 1px dotted;
+}
+
+#end {
+	margin-top: 100px;
+}
+
+.rect {
+	background-color: white;
+	padding: 20px 0px;
+	width: 120px;
+	text-align: center;
+	margin-top: 10px;
+	display: inline-block;
+	border: 5px solid white;
+	outline: 5px solid white;
+	outline-offset: -5px;
+	box-shadow: 15px 0px 0px black;
+}
+
+ul {
+	display: none;
+}
+
+#container2:hover > .rect, #container2:hover > ul > li > .rect {
+	background-color: lightblue;
+}
+
+#container2:hover > ul {
+	display: block;	
+}
+
+#google:hover, #iit:hover {
+	background-color: darkblue !important;
+}

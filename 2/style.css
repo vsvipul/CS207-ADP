@@ -1,0 +1,24 @@
+#container {
+	margin-left: 50%;
+	margin-right: 50%;
+}
+
+#formdiv {
+	margin: 300px -250px;
+}
+
+label {
+	display: inline-block;
+	float: left;
+	width: 250px;
+}
+
+.field {
+	display: inline-block;
+	float: left;
+	margin: 2px;
+}
+
+#submit {
+	margin: 15px 40%;
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CS207 Assignment 1</title>
+		<link rel="stylesheet" href="stylea1.css" type="text/css">
+	</head>
+
+	<body link="purple">
+		<div id="sidebar">
+			<div class="rect">
+				<a href="#">Home Page</a>
+			</div>
+			<div id="container2">
+				<div class="rect" id="link">
+					Links
+				</div>
+				<ul>
+					<li>
+						<div class="rect" id="google">
+							<a href="http://google.com">Google</a>
+						</div>
+					</li>
+					<li>
+						<div class="rect" id="iit">
+							<a href="iitmandi.ac.in">IIT Mandi</a>
+						</div>
+					</li>
+				</ul>
+			</div> 
+		</div>
+
+		<div id="mainpage">
+			<h1><b>Assignment Number 1</b></h1>
+			Welcome to CS207
+			<br><br>
+			<div id="container1">
+				0
+				<div id="rangediv">
+					<input type="range" oninput="sum()" min=0 max=100 value="0" id="ranger">
+				</div>
+				100 + 
+				<div id="number">
+					<input type="number" oninput="sum()" value="50" id="texter">
+				</div>
+				=
+				<div id="answer">50</div>
+			</div>
+			<br>
+			<a href="#end">Jump Link</a>
+
+			<table>
+				<tr>
+					<th>No.</th>
+					<th>Name</th>
+					<th>Email</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>Clark Kent</td>
+					<td>clarkkent@mail.com</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Peter Parker</td>
+					<td>peterparker@mail.com</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Bruce Wayne</td>
+					<td>brucewayne@mail.com</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Tony Stark</td>
+					<td>tonystark@mail.com</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>Bucky Barnes</td>
+					<td>buckybarnes@mail.com</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>Reed Richards</td>
+					<td>reedrichards@mail.com</td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>J'onn J'onzz</td>
+					<td>Jonnjonzz@mail.com</td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>Sheira Sanders</td>
+					<td>sheirasanders@mail.com</td>
+				</tr>
+			</table>
+			<audio controls>
+				<source src="horse.ogg" type="audio/ogg">
+			</audio>
+			<hr id="dottedline">
+			Made 5th August 2018 <br>
+			for CS-207
+			<div id="end">
+				END
+			</div>
+		</div>
+		<script>
+			function sum() {
+				var num1 = document.getElementById("ranger").value;
+				var num2 = document.getElementById("texter").value;
+				var ans = parseInt(num1) + parseInt(num2);
+				document.getElementById("answer").innerHTML = ans;
+			};
+		</script>
+	</body>
+</html>
