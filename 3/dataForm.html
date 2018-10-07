@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Insert Data</title>
+        <link rel="stylesheet" href="styles2.css">
+    <head>
+    <body>
+        <div class="cont">
+            <form action="insertRedirect.php" method="post">
+                <h2>Form</h2>
+                <div class="field">
+        			<label>Name:</label>
+                    <br>
+        			<input type="text" name="name" required>
+                </div>
+                <div>
+        			<label>Email:</label>
+                    <br>
+        			<input type="email" name="email" required>
+                </div>
+                <div class="field">
+        			<label>Contact:</label>
+                    <br>
+        			<input type="text" name="contact" required>
+                </div>
+                <div class="field">
+        			<label>Address:</label>
+                    <br>
+        			<input type="text" name="address" required>
+                </div>
+    			<button class="create" name="insert" type="submit">INSERT</button>
+                <hr />
+    		</form>
+            <form action="displayForm.php" method="post">
+                <button class="create" name="display" type="submit">DISPLAY</button>
+            </form>
+        </div>
+    </body>
+</html>

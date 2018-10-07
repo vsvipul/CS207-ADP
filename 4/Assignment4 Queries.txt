@@ -1,0 +1,93 @@
+CS207 - Applied Database Practicum
+Group 4
+Group Members:
+                Vipul Sharma(B17069)
+                Varun Singh(B17110)
+                Rishi Sharma(B17138)
+                Shreyansh Kulshreshtha(B17062)
+
+SQL Queries:
+
+1.
+    1.
+      mysql> SELECT customers.customerNumber, customers.customerName, orders.orderNumber, SUM(orderdetails.quantityOrdered) as Quantity
+              FROM customers
+              INNER JOIN orders on customers.customerNumber = orders.customerNumber
+              INNER JOIN orderdetails ON orders.orderNumber = orderdetails.orderNumber
+              GROUP BY orders.orderNumber;
+    2.
+      mysql> SELECT customers.customerName
+              FROM customers LEFT JOIN orders ON customers.customerNumber = orders.customerNumber
+              WHERE orders.orderNumber IS NULL;
+    3.
+      mysql> SELECT employees.firstName, employees.lastName, COUNT(customers.customerName) AS NumberOfCustomers
+              FROM employees LEFT JOIN customers ON employees.employeeNumber = customers.salesRepEmployeeNumber
+              GROUP BY employees.employeeNumber ORDER BY COUNT(customers.customerName) DESC;
+    4.
+      mysql> SELECT products.productName FROM products
+              NATURAL JOIN orderDetails
+              NATURAL JOIN orders
+              NATURAL JOIN customers
+              WHERE customers.customerName=’Muscle Machine Inc’;
+    5.
+      mysql> SELECT products.productName, COUNT(orderdetails.quantityOrdered) As TotalQuantity
+              FROM products
+              LEFT JOIN orderdetails ON products.productCode=orderdetails.productCode
+              GROUP BY products.productName;
+    6.
+      mysql> SELECT products.productName, COUNT(orderdetails.quantityOrdered) AS Quantity
+              FROM products
+              LEFT JOIN orderdetails ON products.productCode=orderdetails.productCode
+              GROUP BY products.productName
+              HAVING Quantity=0;
+
+2.
+    1.
+      mysql> SELECT exam, AVG(mark) as averageByExam
+              FROM student_mark
+              GROUP BY exam;
+    2.
+      mysql> SELECT student_id, MAX(mark)
+              FROM student_mark
+              GROUP BY student_id;
+    3.
+      mysql> SELECT MONTH(exam_dt) as Month, MAX(mark) as MaximumMarks
+              FROM student_mark
+              GROUP BY MONTH(exam_dt);
+    4.
+      mysql> SELECT MONTH(exam_dt) as Month, AVG(mark) as AverageMarks
+              FROM student_mark
+              GROUP BY MONTH(exam_dt);
+    5.
+      mysql> SELECT MONTH(exam_dt) as Month, AVG(mark) as AverageMarks
+              FROM student_mark
+              GROUP BY MONTH(exam_dt);
+
+  3.
+      mysql> delimiter $$
+      mysql> create procedure generateRandom(IN n INT)
+              BEGIN
+                DECLARE x INT;
+                SET x = 1;
+                WHILE x <= n
+                DO
+                  INSERT INTO Number(rnumber) VALUES (rand() * .17138);
+                  SET x = x + 1;
+                END WHILE;
+              END; $$
+      mysql> call generateRandom(20) $$
+
+  4.
+      mysql> delimiter $$
+      mysql> create procedure sumofEvenNumbers(IN x INT)
+              BEGIN
+                DECLARE sum INT;
+                SET sum = 0;
+                WHILE x>=0
+                DO
+                  set sum = sum + (select IF((select MOD(x,2))=0, x, 0));
+                  set x = x - 1;
+                END WHILE;
+                SELECT sum;
+              END; $$
+      mysql> call sumofEvenNumbers(21); $$
